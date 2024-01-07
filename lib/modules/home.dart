@@ -89,13 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: defaultText(
-                        text: 'HEIGHT',
-                        fontSize: 14,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    defaultText(
+                      text: 'HEIGHT',
+                      fontSize: 14,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
                     ),
                     Expanded(
                       child: Padding(
@@ -147,18 +145,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: Slider(
-                        min: 80.0,
-                        max: 250.0,
-                        value: UserInfo.height,
-                        activeColor: MainPalette.blue,
-                        onChanged: (value) {
-                          setState(() {
-                            UserInfo.height = value;
-                          });
-                        },
-                      ),
+                    Slider(
+                      min: 80.0,
+                      max: 250.0,
+                      value: UserInfo.height,
+                      activeColor: MainPalette.blue,
+                      onChanged: (value) {
+                        setState(() {
+                          UserInfo.height = value;
+                        });
+                      },
                     ),
                   ],
                 ),
