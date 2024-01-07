@@ -15,5 +15,5 @@ Widget defaultButton({
       ),
       color: color ?? MainPalette.blue,
       onPressed: () => onClick(),
-      child: defaultText(text: title, fontWeight: FontWeight.w500),
+      child: defaultText(text: title),
     );

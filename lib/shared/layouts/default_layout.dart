@@ -10,6 +10,7 @@ Widget defaultLayout({required String title, required Widget slot}) => SafeArea(
           title: defaultText(
             text: title,
             fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
           centerTitle: true,
         ),

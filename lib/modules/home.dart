@@ -9,6 +9,8 @@ import 'package:bmi_calculator/shared/layouts/default_layout.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -185,8 +187,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         defaultText(
-                            text: 'WEIGHT', fontSize: 14, color: Colors.grey),
-                        defaultText(text: '${UserInfo.weight}', fontSize: 36),
+                            text: 'WEIGHT', fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
+                        defaultText(text: '${UserInfo.weight}', fontSize: 36, fontWeight: FontWeight.bold),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -231,8 +233,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         defaultText(
-                            text: 'AGE', fontSize: 14, color: Colors.grey),
-                        defaultText(text: '${UserInfo.age}', fontSize: 36),
+                            text: 'AGE', fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
+                        defaultText(text: '${UserInfo.age}', fontSize: 36, fontWeight: FontWeight.bold),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
