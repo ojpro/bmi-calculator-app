@@ -6,6 +6,7 @@ Widget defaultLayout({
   required String title,
   required Widget slot,
   Widget? leading,
+  List<Widget>? actions,
 }) =>
     SafeArea(
       child: Scaffold(
@@ -19,6 +20,7 @@ Widget defaultLayout({
             fontWeight: FontWeight.bold,
           ),
           centerTitle: true,
+          actions: actions,
         ),
         body: Container(
           width: double.infinity,
