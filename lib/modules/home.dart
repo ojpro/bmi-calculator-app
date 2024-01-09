@@ -22,6 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return defaultLayout(
       title: 'BMI Calculator',
+      actions: [
+        iconButton(
+          onClick: () {},
+          icon: Icons.more_vert_outlined,
+          iconBackground: Colors.transparent,
+        ),
+      ],
       slot: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -183,8 +190,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         defaultText(
-                            text: 'WEIGHT', fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
-                        defaultText(text: '${UserInfo.weight}', fontSize: 36, fontWeight: FontWeight.bold),
+                            text: 'WEIGHT',
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold),
+                        defaultText(
+                            text: '${UserInfo.weight}',
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -229,8 +242,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         defaultText(
-                            text: 'AGE', fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
-                        defaultText(text: '${UserInfo.age}', fontSize: 36, fontWeight: FontWeight.bold),
+                            text: 'AGE',
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold),
+                        defaultText(
+                            text: '${UserInfo.age}',
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -266,15 +285,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           defaultButton(
-              title: 'CALCULATE',
-              onClick: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => const ResultScreen(),
-                      ),
-                    )
-                  }),
+            title: 'CALCULATE',
+            onClick: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const ResultScreen(),
+                ),
+              )
+            },
+          ),
         ],
       ),
     );
