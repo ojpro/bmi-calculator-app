@@ -41,8 +41,9 @@ class ResultScreen extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: 24, bottom: 64, left: 20, right: 20),
+                  top: 8, bottom: 64, left: 20, right: 20),
               child: box(
+                padding: const EdgeInsetsDirectional.only(top: 20),
                 slot: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
