@@ -125,15 +125,7 @@ class UserInfoEntity extends Equatable {
           ),
         );
       default:
-        return ResultEntity(
-          message: 'Unknown',
-          note: 'BMI calculation result is unknown. 🤷‍♂️',
-          score: score,
-          resultGradient: ResultThemeEntity(
-            startColor: const Color(0xFF8d99ae),
-            endColor: const Color(0xFF3d3846),
-          ),
-        );
+        return getDefaultResult();
     }
   }
 
