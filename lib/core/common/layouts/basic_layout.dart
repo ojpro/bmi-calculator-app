@@ -6,6 +6,7 @@ class BasicLayout extends StatelessWidget {
   final String title;
   final List<Widget>? actions;
   final Widget? child;
+  final Widget? leading;
   final Color statusBarColor;
   final List<BottomNavigationBarItem>? bottomNavigationBarItems;
   final Function(int)? onBottomNavBarTapPressed;
@@ -22,6 +23,7 @@ class BasicLayout extends StatelessWidget {
     this.onBottomNavBarTapPressed,
     this.centerTitle = false,
     this.bottomNavigationBarCurrentIndex,
+    this.leading,
   });
 
   @override
@@ -34,6 +36,8 @@ class BasicLayout extends StatelessWidget {
         ),
         child: Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false,
+            leading: leading,
             title: Text(
               title,
               style: const TextStyle(
