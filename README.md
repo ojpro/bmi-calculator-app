@@ -1,5 +1,5 @@
 # BMI Calculator App
-A Modern and simple BMI calculator app to keep to updates with your bmi score
+A Modern and simple BMI calculator app to keep updated with your BMI score
 
 ## Features
 - Simple & Modern UI
