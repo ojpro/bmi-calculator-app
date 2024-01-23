@@ -106,7 +106,9 @@ ThemeData darkTheme({
         splashRadius: 20,
       ),
       textTheme: TextTheme(
-        bodyMedium: TextStyle(color: ColorsPalette.textColor),
+        bodyMedium: TextStyle(
+          color: ColorsPalette.textColor,
+        ),
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: ColorsPalette.primary,
@@ -139,5 +141,8 @@ ThemeData darkTheme({
       ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: ColorsPalette.buttonBackground,
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        color: ColorsPalette.primary,
       ),
     );

@@ -12,6 +12,7 @@ class BasicLayout extends StatelessWidget {
   final Function(int)? onBottomNavBarTapPressed;
   final bool? centerTitle;
   final int? bottomNavigationBarCurrentIndex;
+  final bool showBackButton;
 
   const BasicLayout({
     super.key,
@@ -24,6 +25,7 @@ class BasicLayout extends StatelessWidget {
     this.centerTitle = false,
     this.bottomNavigationBarCurrentIndex,
     this.leading,
+    this.showBackButton = true,
   });
 
   @override
@@ -36,7 +38,7 @@ class BasicLayout extends StatelessWidget {
         ),
         child: Scaffold(
           appBar: AppBar(
-            automaticallyImplyLeading: false,
+            automaticallyImplyLeading: showBackButton,
             leading: leading,
             title: Text(
               title,

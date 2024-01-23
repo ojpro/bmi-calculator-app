@@ -6,6 +6,7 @@ import 'package:bmi_calculator/core/common/styles/colors.dart';
 import 'package:bmi_calculator/src/bmi/domain/entities/user_info_entity.dart';
 import 'package:bmi_calculator/src/bmi/presentation/bloc/bmi_cubit.dart';
 import 'package:bmi_calculator/src/bmi/presentation/bloc/bmi_states.dart';
+import 'package:bmi_calculator/src/bmi/presentation/screens/about_screen.dart';
 import 'package:bmi_calculator/src/bmi/presentation/widgets/select_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,14 +18,47 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppCubit appCubit = AppCubit.get(context);
     return BasicLayout(
+      showBackButton: false,
       title: 'BMI Calculator',
       centerTitle: true,
+      actions: [
+        PopupMenuButton(
+          itemBuilder: (context) {
+            return [
+              PopupMenuItem(
+                onTap: () {
+                  appCubit.changeScreen(const AboutScreen());
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.info,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 6),
+                      child: Text(
+                        'About',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ];
+          },
+          enableFeedback: false,
+          position: PopupMenuPosition.under,
+        ),
+      ],
       child: BlocConsumer<BMICubit, BMIStates>(
         listener: (context, state) {},
         builder: (context, state) {
           BMICubit bmiCubit = BMICubit.get(context);
-          AppCubit appCubit = AppCubit.get(context);
 
           UserInfoEntity userInfo = state.userInfoEntity;
 
@@ -113,13 +147,11 @@ class HomeScreen extends StatelessWidget {
                                           height: userInfo.height - 1)
                                   },
                                   icon: Icons.remove,
-                                  iconBackground:
-                                      ColorsPalette.greyBackground,
+                                  iconBackground: ColorsPalette.greyBackground,
                                 ),
                                 Expanded(
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.baseline,
                                     textBaseline: TextBaseline.alphabetic,
@@ -148,8 +180,7 @@ class HomeScreen extends StatelessWidget {
                                           height: userInfo.height + 1)
                                   },
                                   icon: Icons.add,
-                                  iconBackground:
-                                      ColorsPalette.greyBackground,
+                                  iconBackground: ColorsPalette.greyBackground,
                                 ),
                               ],
                             ),
@@ -209,8 +240,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 iconButton(
@@ -264,8 +294,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 iconButton(
@@ -275,15 +304,13 @@ class HomeScreen extends StatelessWidget {
                                           age: userInfo.age - 1)
                                   },
                                   icon: Icons.remove,
-                                  iconBackground:
-                                      ColorsPalette.greyBackground,
+                                  iconBackground: ColorsPalette.greyBackground,
                                 ),
                                 iconButton(
                                   onClick: () => bmiCubit.changeUserInfo(
                                       age: userInfo.age + 1),
                                   icon: Icons.add,
-                                  iconBackground:
-                                      ColorsPalette.greyBackground,
+                                  iconBackground: ColorsPalette.greyBackground,
                                 ),
                               ],
                             ),
