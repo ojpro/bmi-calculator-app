@@ -5,11 +5,15 @@ Widget iconButton({
   required IconData icon,
   Color iconColor = Colors.white,
   Color iconBackground = Colors.grey,
+  EdgeInsets? padding,
+  double ? iconSize = 24,
 }) =>
     IconButton(
       onPressed: () => onClick(),
+      enableFeedback: false,
+      padding: padding,
       icon: CircleAvatar(
-        radius: 24,
+        radius: iconSize,
         backgroundColor: iconBackground,
         child: Icon(
           icon,

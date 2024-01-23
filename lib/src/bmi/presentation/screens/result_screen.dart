@@ -1,7 +1,9 @@
 import 'package:bmi_calculator/core/bloc/app_cubit.dart';
 import 'package:bmi_calculator/core/common/components/box.dart';
 import 'package:bmi_calculator/core/common/components/default_button.dart';
+import 'package:bmi_calculator/core/common/components/icon_button.dart';
 import 'package:bmi_calculator/core/common/layouts/basic_layout.dart';
+import 'package:bmi_calculator/core/common/styles/colors.dart';
 import 'package:bmi_calculator/src/bmi/domain/entities/result_entity.dart';
 import 'package:bmi_calculator/src/bmi/presentation/bloc/bmi_cubit.dart';
 import 'package:bmi_calculator/src/bmi/presentation/bloc/bmi_states.dart';
@@ -22,6 +24,18 @@ class ResultScreen extends StatelessWidget {
       ),
       title: 'Results',
       centerTitle: true,
+      actions: [
+        Padding(
+          padding: const EdgeInsetsDirectional.only(end: 4),
+          child: iconButton(
+            onClick: () {},
+            icon: Icons.timeline_outlined,
+            iconBackground: ColorsPalette.secondary,
+            padding: const EdgeInsets.all(4),
+            iconSize: 20,
+          ),
+        ),
+      ],
       child: BlocBuilder<BMICubit, BMIStates>(
         builder: (context, state) {
           late ResultEntity result;
